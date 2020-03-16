@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block content %}
+<div id="report-list">
+  {% for deed in deeds %} {% include 'partials/deed.html' %} {% endfor %}
+</div>
+{% endblock %}

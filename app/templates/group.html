@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<div id="group-container">
+  <div id="group-sidebar">
+    <div id="group__wrapper-title">
+      <div id="group__title">{% if current_user.group == 'blue' %}
+        <p>Blue Squares</p>
+        {% endif %} {% if current_user.group == 'red' %}
+        <p>Red Dragons</p>
+        {% endif %} {% if current_user.group == 'green' %}
+        <p>Green Scales</p>
+        {% endif %} {% if current_user.group == 'purple' %}
+        <p>Purple Royals</p>
+        {% endif %}</div>
+    </div>
+    <div id="group__wrapper-info">
+      <div id="group__info">
+        <!-- TODO: Fix the issue where this breaks the page if the text is removed -->
+        Welcome to your Company page. View Deeds past and present.
+      </div>
+    </div>
+  </div>
+  <div id="group-report-list__wrapper">
+    <div id="group-report-list">
+      {% for deed in deeds %} {% if deed.author.group == current_user.group %} {% include
+        'partials/deed.html' %} {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+</div>

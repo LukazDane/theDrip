@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --main-bg-color: #16151b;
+  --main-border-color: #54d5eb;
+  --nav-backgroud-color: #2a2730;
+  --main-title-color: #54d5eb;
+  --sidebar-bg-color: #156e7e;
+  --report-bg-color: #00badb;
+  --report-label-bg-color: #54d5eb;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+#nav_container {
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+#navbar {
+  width: 100%;
+  height: 10%;
+  border: 4px solid var(--main-border-color);
+  background-color: var(--nav-backgroud-color);
+  padding-left: 3%;
+  padding-right: 3%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  pointer-events: all;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+#navbar__logo {
+  color: var(--report-label-bg-color);
+  font-size: 80%;
+  width: 20%;
+}
+
+#navbar__hamburger {
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#navbar__hamburger > * {
+  pointer-events: none;
+}
+
+.thick {
+  width: 35px;
+  height: 5px;
+  background-color: var(--main-border-color);
+  margin: 6px 0;
+  border-radius: 10px;
+}
+
+.logo {
+  color: #505050;
+  font-size: 60px;
+}
+div div img {
+  border: white 2px solid;
+  border-radius: 50%;
+}
+
+.navbar__btn {
+  width: 15rem;
+  height: 56px;
+  border: 4px solid #505050;
+  border-radius: 20px;
+  font-size: 40px;
+  color: #505050;
+  text-align: center;
+}
+
+.navbar__btn:hover {
+  opacity: 75%;
+  cursor: pointer;
+}
+
+/* #sidebar {
+  width: 25%;
+  height: 85%;
+  border: 4px solid white;
+  background-color: var(--sidebar-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 15%;
+  left: 0;
+} */
+
+.sidebar__btn {
+  width: 90%;
+  height: 67px;
+  border-radius: 20px;
+  border: 4px solid white;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+#container {
+  width: 100%;
+  height: 90%;
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+}
+
+@media only screen and (max-width: 768px) {
+  #navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+  }
+
+  /* #sidebar {
+    width: 100%;
+    height: 15%;
+    top: 15%;
+  } */
+
+  .navbar_options {
+    display: none;
+  }
+
+  .navbar__btn {
+    width: 100%;
+    height: 56px;
+  }
+}
