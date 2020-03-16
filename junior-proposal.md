@@ -1,7 +1,5 @@
 # Juniors Spring Intensive Deliverable Proposal
 
-## TODO: copy this file, fill it out, and push it up to your project's repo.
-
 Dates 3/16-3/25
 
 **My Name: Luke Harrison | Thom d'Olanie**
@@ -18,7 +16,10 @@ Dates 3/16-3/25
 
 ## Challenges I Anticipate
 
-**[Multiple model edits - Will review several model structures and will only make changes if they will signifcant;y improve performance][refactoring design - need to review best practices for front end, industry design standards, and create better wireframes before making drastic changes to the site’s appearance][Blindspots/weaknesses - Both team members are DS track and most of the project fixes are in regards to the front end, will seek advice and help as needed][api implementation - read docs thoroughly, finish skateboard changes first, and have that live, add api’s to separate branch and only merge when 100% sure it will not break the previous version of site]**
+- Multiple model edits - Will review several model structures and will only make changes if they will signifcant;y improve performance
+- refactoring design - need to review best practices for front end, industry design standards, and create better wireframes before making drastic changes to the site’s appearance
+- Blindspots/weaknesses - Both team members are DS track and most of the project fixes are in regards to the front end, will seek advice and help as needed
+- api implementation - read docs thoroughly, finish skateboard changes first, and have that live, add api’s to separate branch and only merge when 100% sure it will not break the previous version of site
 
 ## Skateboard
 
