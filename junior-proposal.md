@@ -55,7 +55,7 @@ Dates 3/16-3/25
 
 ## Wireframes
 
-![Original Wireframes]("Logo Title Text 1")
+![Original Wireframes](https://github.com/LukazDane/theDrip/blob/master/app/static/assets/orig_wireframes.png "Logo Title Text 1")
 
 ## Evaluation
 
