@@ -1,18 +1,17 @@
-<header id="navbar">
-  <div class="logo">
-    <a id="navbar__logo" class="col-1" href="/">
-      <!-- <img
-        src="/static/assets/Dripe_trans.png"
-        class="d-inline-block align-top"
-        alt="Drip"
-        style="height: 100%;"
-      /> -->
-      Drip
-    </a>
-  </div>
-  <div id="navbar__hamburger">
-    <div class="thick"></div>
-    <div class="thick"></div>
-    <div class="thick"></div>
-  </div>
-</header>
+<ul class="menu align-center">
+  <li><a id="logo" href="/">
+      <img src="/static/assets/drip-blue-logo.png" class="d-inline-block align-top" alt="theDrip"
+        style="height: 1.5em;" /> </a></li>
+  <li><a class="sidebar__link" href="/about">About</a></li>
+  <li> <a class="sidebar__link" href="{{ url_for('company')}}">Company</a>
+  </li>
+  <li> <a class="sidebar__link" href="{{ url_for('user', username=current_user.username) }}">Profile</a< /li>
+  <li>
+    {% if current_user.is_anonymous %}
+    <a class="sidebar__link" href="{{ url_for('login') }}">Login</a>
+    {% else %}
+    <a class="sidebar__link" href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+  </li>
+
+</ul>

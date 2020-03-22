@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dripe</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static',filename='styles/login.css') }}"
-        />
-    </head>
 
-    <body>
-        <div id="login-container">
-            <img
-                src="static/assets/Dripe_trans.png"
+<head>
+    <title>drip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/login.css') }}" />
+</head>
+
+<body>
+    <div id="login-container">
+        <!-- <img
+                src="static/assets/drip_trans.png"
                 width="400"
                 height="400"
                 alt="Drip"
                 id="login-image"
-            />
-            <form id="login-form" action="" method="post" novalidate>
-                {{ form.csrf_token }}
-                <div class="form-row">
-                    {{ form.username.label }}<br />
-                    {{ form.username(size=32) }}<br />
-                    {% for error in form.username.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </div>
-                <div class="form-row">
-                    {{ form.password.label }}<br />
-                    {{ form.password(size=32) }}<br />
-                    {% for error in form.password.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </div>
-                <!-- <div class="form-row">{{ form.remember_me() }} {{ form.remember_me.label }}</div> -->
-                <div class="form-button">{{ form.submit() }}</div>
-                <a class="registure-link" href="{{ url_for('register') }}">Register</a>
-            </form>
-        </div>
-    </body>
+            /> -->
+        <form id="login-form" action="" method="post" novalidate>
+            {{ form.csrf_token }}
+            <div class="form-row">
+                {{ form.username.label }}<br />
+                {{ form.username(size=32) }}<br />
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div class="form-row">
+                {{ form.password.label }}<br />
+                {{ form.password(size=32) }}<br />
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <!-- <div class="form-row">{{ form.remember_me() }} {{ form.remember_me.label }}</div> -->
+            <div class="form-button">{{ form.submit() }}</div>
+            <a class="registure-link" href="{{ url_for('register') }}">Register</a>
+        </form>
+    </div>
+</body>
+
 </html>

@@ -46,7 +46,7 @@ def user(username):
 @app.route('/user/company')
 @login_required
 def company():
-    # params for this will be "roles" roles(flask_login) = company(Dripe_groups)
+    # params for this will be "roles" roles(flask_login) = company(drip_groups)
     # user = User.query.all()
     deeds = Deed.query.order_by(Deed.timestamp.desc()).all()
     # set company = to comapny

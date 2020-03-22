@@ -1,6 +1,23 @@
-@import url(base.css);
-@import url(home.css);
-@import url(about.css);
-@import url(group.css);
-@import url(sidebar.css);
-@import url(user.css);
+body {
+  background-color: black !important;
+  color: white !important;
+}
+
+ul {
+  list-style-type: none !important;
+  margin-left: 0 !important;
+}
+#user-info li {
+  display: inline-block;
+}
+/* User Page */
+.profile-banner {
+  width: 100vw;
+  background: #333333;
+  text-align: center;
+}
+
+img#user-image {
+  border: 2px solid blue;
+  border-radius: 50%;
+}
