@@ -13,9 +13,20 @@
         {% endif %}</div>
     </div>
     <div id="group__wrapper-info">
-      <div id="group__info">
+      <div id="group__info">{% if current_user.group == 'blue' %}
+        <p>Squares. That happen to be blue. What’s cooler than that?</p>
+        <p>See all your company's deeds! Past, present, and possibly future.</p>
+        {% endif %} {% if current_user.group == 'red' %}
+        <p>ENTIRE Dragons that are Red. Heck yeah.</p>
+        <p>See all your company's deeds! Past, present, and possibly future.</p>
+        {% endif %} {% if current_user.group == 'green' %}
+        <p>Oh shit these bois be green</p>
+        <p>See all your company's deeds! Past, present, and possibly future.</p>
+        {% endif %} {% if current_user.group == 'purple' %}
+        <p>Pompous Pricks</p>
+        <p>See all your company's deeds! Past, present, and possibly future.</p>
+        {% endif %}
         <!-- TODO: Fix the issue where this breaks the page if the text is removed -->
-        Welcome to your Company page. View Deeds past and present.
       </div>
     </div>
   </div>
