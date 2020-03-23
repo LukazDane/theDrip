@@ -40,6 +40,8 @@ class Deed(db.Model):
     body = db.Column(db.String(240))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    guests = db.Column(db.Integer, default=0)
+    time_req = db.Column(db.String(25))
 
     def __repr__(self):
         return '<Deed {}>'.format(self.body)

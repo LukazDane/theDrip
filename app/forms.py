@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField, IntegerField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
@@ -59,4 +59,14 @@ class DeedForm(FlaskForm):
         DataRequired(), Length(min=1, max=25)])
     body = TextAreaField('Say something', validators=[
         DataRequired(), Length(min=1, max=140)])
+    guests = IntegerField('Members Needed', validators=[
+        DataRequired()])
+    time_req = SelectField("Time estimate: ", choices=[("0", "Unknown"),
+                                                       ("1", "< 1 hour"),
+                                                       ("2", "1 - 6 hours"),
+                                                       ("3", "Full Day"),
+                                                       ("4", "Multiple Days"),
+                                                       ("5", "Up to 1 Week"),
+                                                       ("6", "Up to 1 Month"),
+                                                       ("7", "Ongoing")], default="0")
     submit = SubmitField('Submit')
