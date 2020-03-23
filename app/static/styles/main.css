@@ -10,6 +10,11 @@ ul {
 #user-info li {
   display: inline-block;
 }
+.form-row {
+  width: 85vw;
+  margin: 0 auto;
+}
+
 /* User Page */
 .profile-banner {
   width: 100vw;
@@ -20,4 +25,19 @@ ul {
 img#user-image {
   border: 2px solid blue;
   border-radius: 50%;
+}
+
+/*  Home page */
+.deed {
+  border: 1px solid white;
+}
+.deed_title {
+  width: 25vw;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #1779ba;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #1779ba;
+  font-weight: bold;
+  font-size: 2rem;
 }
