@@ -31,7 +31,7 @@ img#user-image {
 .deed {
   border: 1px solid white;
 }
-.deed_title {
+form .deed_title {
   width: 25vw;
   text-align: center;
   border-radius: 5px;
