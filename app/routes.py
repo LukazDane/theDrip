@@ -144,3 +144,8 @@ def update():
     deed.time_req = newtimereq
     db.session.commit()
     return redirect(url_for('user', username=current_user.username))
+
+
+@app.route("/y0u_ar3_fr33")
+def youarefree():
+    return render_template("splash.html")
