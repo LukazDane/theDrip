@@ -1,83 +1,86 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="profile-banner">
-    <div class="prof-image-container">
-        <img class="prof-image" src="{{ user.avatar(128) }}" id="user-image" />
+{% if user.group == 'blue' %}
+<div class="profile-banner-b">
+    {% elif user.group == 'green' %}
+    <div class="profile-banner-g">
+        {% endif %}
+        <div class="prof-image-container">
+            <img class="prof-image" src="{{ user.avatar(128) }}" id="user-image" />
+        </div>
+        <div>
+            <h1 id="user-header__title">{{ user.username }}</h1>
+        </div>
+        <div id="user-info-wrapper">
+            <ul id="user-info">
+                {% if user.last_seen %}
+                <li>
+                    <p>Last seen on:</p>
+                </li>
+                <li>
+                    <p>{{ user.last_seen.strftime('%Y-%m-%d') }}</p>
+                </li>
+                {% endif %}
+                <li>
+                    <p>Company:</p>
+                </li>
+                <li>
+                    {% if user.group == 'blue' %}
+                    <p>Blue Squares</p>
+                    {% endif %} {% if user.group == 'red' %}
+                    <p>Red Dragons</p>
+                    {% endif %} {% if user.group == 'green' %}
+                    <p>Green Scales</p>
+                    {% endif %} {% if user.group == 'purple' %}
+                    <p>Purple Royals</p>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-    <div>
-        <h1 id="user-header__title">{{ user.username }}</h1>
-    </div>
-    <div id="user-info-wrapper">
-        <ul id="user-info">
-            {% if user.last_seen %}
-            <li>
-                <p>Last seen on:</p>
-            </li>
-            <li>
-                <p>{{ user.last_seen }}</p>
-            </li>
-            {% endif %}
-            <li>
-                <p>Company:</p>
-            </li>
-            <li>
-                {% if user.group == 'blue' %}
-                <p>Blue Squares</p>
-                {% endif %} {% if user.group == 'red' %}
-                <p>Red Dragons</p>
-                {% endif %} {% if user.group == 'green' %}
-                <p>Green Scales</p>
-                {% endif %} {% if user.group == 'purple' %}
-                <p>Purple Royals</p>
-            </li>
-            {% endif %}
-        </ul>
-    </div>
-</div>
-<div>
-    <form action="" method="post">
-        <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                {{ form.hidden_tag() }}
-                <div class="form-row">
-                    {{ form.title.label }}
-                    {{ form.title(cols=32, rows=4) }}
-                    {% for error in form.title.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </div>
-                <div class="form-row">
-                    {{ form.body.label }}
-                    {{ form.body(cols=32, rows=4) }}
-                    {% for error in form.body.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </div>
-                <div class="form-row">
-                    {{ form.guests(cols=32, rows=4)}}
-                    {% for error in form.guests.error %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                    {{ form.time_req.label }}
-                    {{ form.time_req(size=1) }}
-                    {% for error in form.time_reqerrors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                </div>
-                <div class="form-row">
-                    <p>{{ form.submit() }}</p>
+    <div class="form-container">
+        <form action="" method="post">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    {{ form.hidden_tag() }}
+                    <div class="form-row">
+                        {{ form.title.label }}
+                        {{ form.title(cols=32, rows=4) }}
+                        {% for error in form.title.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.body.label }}
+                        {{ form.body(cols=32, rows=2) }}
+                        {% for error in form.body.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.guests.label }}
+                        {{ form.guests(cols=32, rows=4)}}
+                        {% for error in form.guests.error %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        {{ form.time_req.label }}
+                        {{ form.time_req(size=1) }}
+                        {% for error in form.time_reqerrors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                    <div class="form-row">
+                        <p>{{ form.submit() }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-</div>
-</form>
+    </div>
+    </form>
 
-<div class="off-canvas-content" data-off-canvas-content>
-    <div class="grid-container">
+    <div class="grid-container deeds-list-prof">
         <div class="prof-deed-list">
             {% for deed in deeds %} {% include 'partials/deed.html' %} {% endfor %}
         </div>
     </div>
-</div>
 </div>
 {% endblock %}

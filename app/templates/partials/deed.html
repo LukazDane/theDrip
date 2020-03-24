@@ -4,7 +4,7 @@
   <form method="POST" action="/update">
     <input type="hidden" value="{{deed.id}}" name="deedid" />
     <input type="hidden" value="{{deed.title}}" name="oldtitle" />
-    <input class="deed_title" type="text" value="{{deed.title}}" name="newtitle" />
+    <input class="deed-title" type="text" value="{{deed.title}}" name="newtitle" />
     <input type="hidden" value="{{deed.body}}" name="oldcontent" />
     <textarea class="deed-info" type="text" name="newcontent">{{deed.body}}</textarea>
     <div class="deed-row">
@@ -21,19 +21,31 @@
         <option value="6">Up to 1 Month</option>
         <option value="7">Ongoing</option>
       </select>
+      <input class="deed-sender" style="cursor: pointer;" type="submit" value="Update" />
     </div>
-    <input class="deed-sender" style="cursor: pointer;" type="submit" value="Update" />
   </form>
-  <form method="POST" action="/profile/deed/delete" style="display: inline">
+  <form method="POST" action="/profile/deed/delete" style="display: inline-block">
     <input type="hidden" value="{{deed.id}}" name="deedid" />
     <input class="deed-date" style="cursor: pointer;" type="submit" value="Delete" />
   </form>
   {% else %}
   <div class="deed-title">{{deed.title}}</div>
   <div class="deed-info">{{deed.body}}</div>
-  <div class="deed-sender">{{deed.author.username}}</div>
-  <div class="deed-date">{{deed.author.group}}</div>
   <div class="deed-guests">{{deed.guests}}</div>
   <div class="deed-time-req">{{deed.time_req}}</div>
+  <div class="bottom-line">
+    <div class="deed-date"><small>last modified: {{ deed.timestamp.strftime('%Y-%m-%d')}} </small></div>
+    <div class="deed-sender"><small>posted by: </small>{{deed.author.username}}</div>
+    <div class="deed-group"><small>affiliation: </small>{% if deed.author.group == 'blue' %}
+      Blue Squares
+      {% endif %} {% if deed.author.group == 'red' %}
+      Red Dragons
+      {% endif %} {% if deed.author.group == 'green' %}
+      Green Scales
+      {% endif %} {% if deed.author.group == 'purple' %}
+      Purple Royals
+      {% endif %}
+    </div>
+  </div>
   {% endif %}
 </div>

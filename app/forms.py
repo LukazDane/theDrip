@@ -55,11 +55,11 @@ class EditProfileForm(FlaskForm):
 
 
 class DeedForm(FlaskForm):
-    title = StringField('Title', validators=[
+    title = StringField('Title: ', validators=[
         DataRequired(), Length(min=1, max=25)])
-    body = TextAreaField('Say something', validators=[
+    body = TextAreaField('Deed description: ', validators=[
         DataRequired(), Length(min=1, max=140)])
-    guests = IntegerField('Members Needed', validators=[
+    guests = IntegerField('Estimate members needed: ', validators=[
         DataRequired()])
     time_req = SelectField("Time estimate: ", choices=[("0", "Unknown"),
                                                        ("1", "< 1 hour"),

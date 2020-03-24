@@ -1,3 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+/* @group Blink */
+.blink {
+  -webkit-animation: blink 0.75s linear infinite;
+  -moz-animation: blink 0.75s linear infinite;
+  -ms-animation: blink 0.75s linear infinite;
+  -o-animation: blink 0.75s linear infinite;
+  animation: blink 0.75s linear infinite;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* @end */
+
+* {
+  font-family: "Press Start 2P", cursive !important;
+}
 html,
 body {
   max-width: 100%;
@@ -19,12 +104,48 @@ li {
 select {
   padding: 0 24px 0 0.5rem !important;
 }
+small {
+  opacity: 0.6;
+}
 #user-info li {
   display: inline-block;
 }
 .form-row {
   width: 85vw;
   margin: 0 auto;
+}
+label {
+  color: #1779ba !important;
+  /* font-size: large !important; */
+}
+
+.deed-sender,
+.deed-group {
+  display: inline-block;
+  margin: 0px 1em 0px 0px;
+  color: #1779ba;
+}
+input.deed-sender {
+  height: 2.4rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #1779ba;
+}
+
+input.deed-date {
+  height: 2.4rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid crimson;
+  color: crimson;
+}
+
+input#submit {
+  height: 2.4rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #1779ba;
+  color: #1779ba;
 }
 
 /* User Page */
@@ -36,7 +157,7 @@ select {
     background-position: 100% 0;
   }
 }
-.profile-banner {
+.profile-banner-b {
   /* width: 100vw; */
   background: #333333;
   text-align: center;
@@ -46,18 +167,61 @@ select {
   animation: animatedBackground 40s linear infinite;
 }
 
+.profile-banner-g {
+  /* width: 100vw; */
+  background: #333333;
+  text-align: center;
+  background-image: url(https://cdn.pixabay.com/photo/2017/07/15/10/23/halftone-2506015_1280.jpg);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 40s linear infinite;
+}
+
+.profile-banner-r {
+  /* width: 100vw; */
+  background: #333333;
+  text-align: center;
+  background-image: url(https://ak0.picdn.net/shutterstock/videos/162730/thumb/1.jpg);
+  background-position: 0px 0px;
+  background-repeat: round;
+  animation: animatedBackground 20s linear infinite;
+}
+.profile-banner-p {
+  /* width: 100vw; */
+  background: #333333;
+  text-align: center;
+  background-image: url(https://ak0.picdn.net/shutterstock/videos/162730/thumb/1.jpg);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 40s linear infinite;
+}
+ul.menu.align-center {
+  height: 4rem;
+}
 img#user-image {
-  border: 2px solid blue;
+  border: 5px solid #1779ba;
   border-radius: 50%;
 }
 
 /*  Home page */
+.deed .deed-title,
+.deed .deed-guests,
+.deed .deed-info,
+.deed .deed-time-req {
+  margin: 0 0 1rem;
+  padding: 0.5rem;
+}
 .deed {
-  border: 3px solid #1779ba;
+  border-left: 3px solid #1779ba;
+  border-bottom: 1px solid #1779ba;
   border-radius: 15px;
   padding: 1em;
+  margin-bottom: 1rem;
+  font-size: xx-small !important;
 }
-form .deed_title {
+
+form .deed-title,
+.deed .deed-title {
   width: 25vw;
   text-align: center;
   border-radius: 5px;
@@ -65,33 +229,70 @@ form .deed_title {
   background-color: rgba(255, 255, 255, 0);
   color: #1779ba;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: xx-small;
+  height: 2.4375rem;
 }
 
-form .deed-info {
+form .deed-info,
+.deed .deed-info {
   border-radius: 5px;
   border: 1px solid #1779ba;
   background-color: rgba(255, 255, 255, 0);
   color: #1779ba;
-  font-size: large;
+  font-size: xx-small;
+  overflow: scroll;
 }
 
-form .deed-guests {
+form .deed-guests,
+.deed .deed-guests {
   border-radius: 5px;
   border: 1px solid #1779ba;
   background-color: rgba(255, 255, 255, 0);
   color: #1779ba;
-  font-size: large;
+  font-size: xx-small;
   width: 10%;
   display: inline-block;
 }
 
-form .deed-time-req {
+form .deed-time-req,
+.deed .deed-time-req {
   border-radius: 5px;
   border: 1px solid #1779ba;
   background-color: rgba(255, 255, 255, 0);
   color: #1779ba;
-  font-size: large;
+  font-size: xx-small;
   width: 50%;
   display: inline-block;
+}
+
+.form-container {
+  padding: 1rem;
+  border-right: 3px solid #1779ba;
+  border-radius: 5px;
+  width: 40vw;
+  display: inline-block;
+  height: 60vh;
+}
+.form-container * {
+  font-size: xx-small !important;
+}
+
+.deeds-list-prof {
+  padding: 1rem;
+  border-radius: 5px;
+  display: inline-flex;
+  overflow: scroll;
+  max-height: 65vh;
+  width: 54vw;
+}
+
+input#title,
+textarea#body,
+input#guests,
+select#time_req {
+  border-radius: 5px;
+  border: 1px solid #1779ba;
+  background-color: rgba(255, 255, 255, 0);
+  color: #1779ba;
+  font-size: xx-small;
 }
