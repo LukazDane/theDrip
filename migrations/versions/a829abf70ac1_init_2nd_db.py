@@ -1,8 +1,8 @@
-"""init tables
+"""init 2nd db
 
-Revision ID: f92262f4bf8f
+Revision ID: a829abf70ac1
 Revises: 
-Create Date: 2020-03-21 20:00:28.437043
+Create Date: 2020-03-24 06:34:25.854770
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f92262f4bf8f'
+revision = 'a829abf70ac1'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -35,6 +35,8 @@ def upgrade():
     sa.Column('body', sa.String(length=240), nullable=True),
     sa.Column('timestamp', sa.DateTime(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
+    sa.Column('guests', sa.Integer(), nullable=True),
+    sa.Column('time_req', sa.String(length=25), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
