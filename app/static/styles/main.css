@@ -284,7 +284,7 @@ form .deed-time-req,
   overflow: scroll;
   max-height: 65vh;
   width: 54vw;
-  max-width: 54vw !important;
+  max-width: 50vw !important;
 }
 
 input#title,
