@@ -133,8 +133,14 @@ def update():
     oldtitle = request.form.get("oldtitle")
     newcontent = request.form.get("newcontent")
     oldcontent = request.form.get("oldcontent")
+    newguests = request.form.get("newguests")
+    oldguests = request.form.get("oldguests")
+    newtimereq = request.form.get("newtimereq")
+    oldtimereq = request.form.get("oldtimereq")
     deed = Deed.query.filter_by(id=id).first_or_404()
     deed.title = newtitle
     deed.body = newcontent
+    deed.guests = newguests
+    deed.time_req = newtimereq
     db.session.commit()
     return redirect(url_for('user', username=current_user.username))

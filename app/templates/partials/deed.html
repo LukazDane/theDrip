@@ -7,6 +7,21 @@
     <input class="deed_title" type="text" value="{{deed.title}}" name="newtitle" />
     <input type="hidden" value="{{deed.body}}" name="oldcontent" />
     <textarea class="deed-info" type="text" name="newcontent">{{deed.body}}</textarea>
+    <div class="deed-row">
+      <input type="hidden" value="{{deed.guests}}" name="oldguests">
+      <input class="deed-guests" type="number" name="newguests" value="{{deed.guests}}" />
+      <input type="hidden" value="{{deed.time_req}}" name="oldtimereq" />
+      <select class="deed-time-req" name="newtimereq">
+        <option value="0">Unknown</option>
+        <option value="1"> &lt; 1 hour</option>
+        <option value="2">1 - 6 hours</option>
+        <option value="3">Full Day</option>
+        <option value="4">Multiple Day</option>
+        <option value="5">Up to 1 Week</option>
+        <option value="6">Up to 1 Month</option>
+        <option value="7">Ongoing</option>
+      </select>
+    </div>
     <input class="deed-sender" style="cursor: pointer;" type="submit" value="Update" />
   </form>
   <form method="POST" action="/profile/deed/delete" style="display: inline">
@@ -18,5 +33,7 @@
   <div class="deed-info">{{deed.body}}</div>
   <div class="deed-sender">{{deed.author.username}}</div>
   <div class="deed-date">{{deed.author.group}}</div>
+  <div class="deed-guests">{{deed.guests}}</div>
+  <div class="deed-time-req">{{deed.time_req}}</div>
   {% endif %}
 </div>

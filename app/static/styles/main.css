@@ -1,3 +1,8 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   background-color: black !important;
   color: white !important;
@@ -6,6 +11,9 @@ body {
 ul {
   list-style-type: none !important;
   margin-left: 0 !important;
+}
+select {
+  padding: 0 24px 0 0.5rem !important;
 }
 #user-info li {
   display: inline-block;
@@ -16,10 +24,22 @@ ul {
 }
 
 /* User Page */
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
 .profile-banner {
-  width: 100vw;
+  /* width: 100vw; */
   background: #333333;
   text-align: center;
+  background-image: url(https://ak0.picdn.net/shutterstock/videos/162730/thumb/1.jpg);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 40s linear infinite;
 }
 
 img#user-image {
@@ -29,15 +49,45 @@ img#user-image {
 
 /*  Home page */
 .deed {
-  border: 1px solid white;
+  border: 3px solid #1779ba;
+  border-radius: 15px;
+  padding: 1em;
 }
 form .deed_title {
   width: 25vw;
   text-align: center;
   border-radius: 5px;
   border: 1px solid #1779ba;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0);
   color: #1779ba;
   font-weight: bold;
   font-size: 2rem;
+}
+
+form .deed-info {
+  border-radius: 5px;
+  border: 1px solid #1779ba;
+  background-color: rgba(255, 255, 255, 0);
+  color: #1779ba;
+  font-size: large;
+}
+
+form .deed-guests {
+  border-radius: 5px;
+  border: 1px solid #1779ba;
+  background-color: rgba(255, 255, 255, 0);
+  color: #1779ba;
+  font-size: large;
+  width: 10%;
+  display: inline-block;
+}
+
+form .deed-time-req {
+  border-radius: 5px;
+  border: 1px solid #1779ba;
+  background-color: rgba(255, 255, 255, 0);
+  color: #1779ba;
+  font-size: large;
+  width: 50%;
+  display: inline-block;
 }

@@ -68,5 +68,5 @@ class DeedForm(FlaskForm):
                                                        ("4", "Multiple Days"),
                                                        ("5", "Up to 1 Week"),
                                                        ("6", "Up to 1 Month"),
-                                                       ("7", "Ongoing")], default="0")
+                                                       ("7", "Ongoing")])
     submit = SubmitField('Submit')
