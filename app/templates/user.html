@@ -34,46 +34,41 @@
         </ul>
     </div>
 </div>
-<button type="button" class="button" data-toggle="offCanvasTop1">Open Top</button>
-<div class="off-canvas-wrapper">
-    <div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas>
-        <div>
-            <form action="" method="post">
-                <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                        {{ form.hidden_tag() }}
-                        <div class="form-row">
-                            {{ form.title.label }}
-                            {{ form.title(cols=32, rows=4) }}
-                            {% for error in form.title.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="form-row">
-                            {{ form.body.label }}
-                            {{ form.body(cols=32, rows=4) }}
-                            {% for error in form.body.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="form-row">
-                            {{ form.guests(cols=32, rows=4)}}
-                            {% for error in form.guests.error %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                            {{ form.time_req.label }}
-                            {{ form.time_req(size=1) }}
-                            {% for error in form.time_reqerrors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="form-row">
-                            <p>{{ form.submit() }}</p>
-                        </div>
-                    </div>
+<div>
+    <form action="" method="post">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                {{ form.hidden_tag() }}
+                <div class="form-row">
+                    {{ form.title.label }}
+                    {{ form.title(cols=32, rows=4) }}
+                    {% for error in form.title.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
                 </div>
+                <div class="form-row">
+                    {{ form.body.label }}
+                    {{ form.body(cols=32, rows=4) }}
+                    {% for error in form.body.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+                <div class="form-row">
+                    {{ form.guests(cols=32, rows=4)}}
+                    {% for error in form.guests.error %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                    {{ form.time_req.label }}
+                    {{ form.time_req(size=1) }}
+                    {% for error in form.time_reqerrors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+                <div class="form-row">
+                    <p>{{ form.submit() }}</p>
+                </div>
+            </div>
         </div>
-    </div>
 </div>
 </form>
 

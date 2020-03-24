@@ -12,6 +12,10 @@ ul {
   list-style-type: none !important;
   margin-left: 0 !important;
 }
+li {
+  flex-direction: row;
+  align-items: center;
+}
 select {
   padding: 0 24px 0 0.5rem !important;
 }
